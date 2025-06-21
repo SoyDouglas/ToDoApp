@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <main id="main" class="app-container">
+    <div class="app-container">
         <aside class="sidebar">
             <h2 class="sidebarTittle">Categories</h2>
 
@@ -29,8 +29,33 @@
                 <ul class="listUserCategories">
                     <!-- JS its going to inject this items <li> -->
                 </ul>
+                <button class="addCategoryButton">+ Add category</button>
             </div>
         </aside>
-    </main>
+
+        <!-- Main content -->
+        <main>
+            <header class="mainHeader">
+                <h1>ToDoApp</h1>
+                <h2 class="currentCategoryName">Work 📁</h2>
+            </header>
+
+
+            <!-- Request the tasks -->
+            <section class="newTask">
+                <form id="taskForm">
+                    <input type="text" id="taskInput" placeholder="¿What should you do?" required>
+                    <button type="submit">Add</button>
+                </form>
+            </section>
+
+            <!-- Task list -->
+            <section class="taskList">
+                <ul id="tasks">
+
+                </ul>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
