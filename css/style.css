@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.root{
+    --primary-color: #7F5AF0;
+    --secundary-color: #72757E;
+    --background-color: #F3F4F6;
+    --text-color: #0D0D0D;
+    --background-color-dark: #16161A;
+    --text-color-dark: #FFFFFE;
+}

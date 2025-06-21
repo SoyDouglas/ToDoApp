@@ -4,7 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDoApp</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <main id="main" class="app-container">
+        <aside class="sidebar">
+            <h2 class="sidebarTittle">Categories</h2>
+
+            <!-- Default categories -->
+            <ul>
+                <li class="categoryItem">Work 📁</li>
+                <li class="categoryItem">Home 🏠</li>
+                <li class="categoryItem">University 🎓</li>
+                <li class="categoryItem">Gym 💪</li>
+            </ul>
+
+            <!-- categories divider -->
+            <hr class="sidebarDivider">
+
+            <!-- User categories -->
+
+            <div class="userCategories">
+                <h3>Custom categories</h3>
+                <ul class="listUserCategories">
+                    <!-- JS its going to inject this items <li> -->
+                </ul>
+            </div>
+        </aside>
+    </main>
 </body>
 </html>
