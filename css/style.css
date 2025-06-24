@@ -148,3 +148,54 @@ main {
     transform: scale(0.97);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
+
+
+
+.taskItem{
+    display: flex;
+    gap: 1rem;
+    font-size: 1.6rem;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-align: left;
+}
+
+.taskItem:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+
+/* Empty circle for the task uncompleted */
+.taskIcon {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Check icon if the task get complete*/
+
+.taskItem.completed .taskIcon::after {
+  content: "✔";
+  color: white;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 0;
+  left: 4px;
+}
+
+.taskItem.completed .taskIcon {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.taskItem.completed .taskText {
+  text-decoration: line-through;
+  color: var(--secundary-color);
+}
