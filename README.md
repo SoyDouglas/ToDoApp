@@ -30,12 +30,6 @@ A lightweight, responsive, and intuitive ToDo application built with vanilla HTM
 
 ---
 
-## Demo
-
-![ToDoApp Preview](docs/preview.png)
-
----
-
 ## Getting Started
 
 ### Prerequisites
@@ -48,7 +42,7 @@ A lightweight, responsive, and intuitive ToDo application built with vanilla HTM
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/ToDoApp.git
+   git clone https://github.com/SoyDouglas/ToDoApp.git
    cd ToDoApp
    ```
 
@@ -112,7 +106,3 @@ ToDoApp/
 Contributions are welcome! Feel free to open issues or submit pull requests for enhancements and bug fixes.
 
 ---
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
