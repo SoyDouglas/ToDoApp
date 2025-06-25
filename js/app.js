@@ -3,7 +3,18 @@
 
 const listUserCategories = document.getElementById("listUserCategories");
 const addCategoryButton = document.getElementById("addCategoryButton");
+let currentCategory = 'home';
 let customCategories = [];
+
+
+// Function to create new task
+function createTask(text) {
+    return {
+        id: Date.now(),
+        text,
+        completed: false
+    };
+}
 
 addCategoryButton.addEventListener("click", () => {
     const nameCustomCategory = prompt("Category name: ");
@@ -31,9 +42,49 @@ function renderCustomCategories() {
 
         li.addEventListener("click", () => {
             // Change category, render tasks of the active category, etc..
-            console.log(`Change to custom category: ${cat.id}`);
+            updateActiveCategory(li);
         });
         listUserCategories.appendChild(li);
     })
 }
+
+
+// apply styles to task list
+
+const taskList = document.getElementById("taskList");
+
+taskList.addEventListener("click", (event) => {
+    const taskItem = event.target.closest('.taskItem');
+    if(!taskItem) {
+        return ;
+    }
+
+    taskItem.classList.toggle('completed');
+});
+
+// Change the current category name while it is selected
+
+const categoryNameHeader = document.querySelector('.currentCategoryName');
+
+function updateActiveCategory(item) {
+    // delete activeCategory class to all items
+    document.querySelectorAll('.categoryItem')
+    .forEach(el => el.classList.remove('activeCategory'));
+
+    item.classList.add('activeCategory');
+
+    categoryNameHeader.textContent = item.textContent;
+
+    // Render the task of that category
+    // renderTask() this method must be coded
+}
+
+document.querySelectorAll('aside.sidebar ul li.categoryItem')
+.forEach(item => {
+    item.addEventListener('click', () => updateActiveCategory(item));
+});
+
+
+
+
 
