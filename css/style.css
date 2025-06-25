@@ -206,3 +206,18 @@ main {
   text-decoration: line-through;
   color: var(--secundary-color);
 }
+
+.deleteTaskBtn {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--secundary-color);
+  margin-left: auto;   /* push it to the right */
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.deleteTaskBtn:hover {
+  color: red;
+}

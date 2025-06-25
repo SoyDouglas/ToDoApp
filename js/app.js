@@ -64,26 +64,37 @@ function selectCategory(id) {
 // Display all tasks for the currently selected category
 function renderTasks() {
   const list = document.getElementById('taskList');
-  list.innerHTML = ''; // clear previous list
+  list.innerHTML = '';
 
   const cat = categories.find(c => c.id === currentCategory);
-  (cat.tasks || []).forEach(task => {
+  (cat.tasks || []).forEach((task, idx) => {
     const li = document.createElement('li');
-    // Apply 'completed' class if task.completed is true
     li.className = 'taskItem' + (task.completed ? ' completed' : '');
     li.innerHTML = `
       <span class="taskIcon"></span>
       <span class="taskText">${task.text}</span>
+      <button class="deleteTaskBtn" title="Delete task">&times;</button>
     `;
-    // Toggle completion status on click, then save and re-render
-    li.addEventListener('click', () => {
+
+    // toggle completion
+    li.querySelector('.taskIcon').addEventListener('click', () => {
       task.completed = !task.completed;
       save();
       renderTasks();
     });
+
+    // delete handler
+    li.querySelector('.deleteTaskBtn').addEventListener('click', e => {
+      e.stopPropagation();                // don’t toggle complete
+      cat.tasks.splice(idx, 1);           // remove this task
+      save();                             // persist
+      renderTasks();                      // re-render list
+    });
+
     list.appendChild(li);
   });
 }
+
 
 // Listen for the 'submit' event on the new-task form to add a task to the current category
 document.getElementById('taskForm').addEventListener('submit', e => {
